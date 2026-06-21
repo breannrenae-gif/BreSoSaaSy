@@ -1148,7 +1148,7 @@
           document.getElementById('vLeads').textContent = leads.value;
           document.getElementById('vMiss').textContent = miss.value + '%';
           document.getElementById('vClose').textContent = close.value + '%'; document.getElementById('vVal').textContent = money(+val.value);
-          var missedMo = (+leads.value) * (+miss.value/100) * 4.3;
+          var missedMo = (+leads.value) * (+miss.value/100) * 4;
           var lost = missedMo * (+close.value/100) * (+val.value);
           document.getElementById('calcLost').textContent = money(lost);
           document.getElementById('calcRecover').textContent = money(lost*0.5); var mEl=document.getElementById('calcMath'); if(mEl){mEl.textContent = leads.value+' leads/wk  x  '+miss.value+'% slip  x  '+close.value+'% close  x  '+money(+val.value)+'  =  about '+money(lost)+'/mo';}
