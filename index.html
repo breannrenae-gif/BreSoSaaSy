@@ -510,6 +510,7 @@
   .calc.hero-calc .calc-controls .ctrl{margin-bottom:18px;}
   .calc-cta{width:100%;justify-content:center;margin-top:18px;}
   .calc.hero-calc .calc-result .recover{margin-bottom:0;}
+  .calc.hero-calc .calc-math{font-size:.72rem;color:var(--ink-mute);margin-top:14px;line-height:1.45;}
 </style>
 <!-- Meta Pixel (paste your numeric Pixel ID into META_PIXEL_ID to activate) -->
 <script>
@@ -598,6 +599,10 @@
                   <input type="range" id="cMiss" min="5" max="60" value="20" step="1" />
                 </div>
                 <div class="ctrl">
+                  <label>Of those, how many would you close? <b id="vClose">35%</b></label>
+                  <input type="range" id="cClose" min="5" max="80" value="35" step="1" />
+                </div>
+                <div class="ctrl">
                   <label>Average value of a job or client <b id="vVal">$1,000</b></label>
                   <input type="range" id="cVal" min="100" max="10000" value="1000" step="100" />
                 </div>
@@ -607,6 +612,7 @@
                 <div class="big" id="calcLost">$0</div>
                 <div class="cap2">per month in lost revenue</div>
                 <div class="recover">Recover even half and that's <b id="calcRecover">$0</b>/mo back in your pocket.</div>
+                <div class="calc-math" id="calcMath"></div>
                 <a class="btn btn-primary calc-cta" href="#audit">Show me how to keep it &rarr;</a>
               </div>
             </div>
@@ -1131,8 +1137,8 @@
       };
 
       /* ---- cost calculator ---- */
-      var leads = document.getElementById('cLeads'), miss = document.getElementById('cMiss'), val = document.getElementById('cVal');
-      if (leads && miss && val) {
+      var leads = document.getElementById('cLeads'), miss = document.getElementById('cMiss'), val = document.getElementById('cVal'), close = document.getElementById('cClose');
+      if (leads && miss && val && close) {
         function money(n){ return '$' + Math.round(n).toLocaleString(); }
         function fill(r){
           var min = +r.min, max = +r.max, pct = ((r.value-min)/(max-min))*100;
@@ -1141,14 +1147,14 @@
         function update(){
           document.getElementById('vLeads').textContent = leads.value;
           document.getElementById('vMiss').textContent = miss.value + '%';
-          document.getElementById('vVal').textContent = money(+val.value);
+          document.getElementById('vClose').textContent = close.value + '%'; document.getElementById('vVal').textContent = money(+val.value);
           var missedMo = (+leads.value) * (+miss.value/100) * 4.3;
-          var lost = missedMo * (+val.value);
+          var lost = missedMo * (+close.value/100) * (+val.value);
           document.getElementById('calcLost').textContent = money(lost);
-          document.getElementById('calcRecover').textContent = money(lost*0.5);
-          [leads, miss, val].forEach(fill);
+          document.getElementById('calcRecover').textContent = money(lost*0.5); var mEl=document.getElementById('calcMath'); if(mEl){mEl.textContent = leads.value+' leads/wk  x  '+miss.value+'% slip  x  '+close.value+'% close  x  '+money(+val.value)+'  =  about '+money(lost)+'/mo';}
+          [leads, miss, val, close].forEach(fill);
         }
-        [leads, miss, val].forEach(function(r){ r.addEventListener('input', update); });
+        [leads, miss, val, close].forEach(function(r){ r.addEventListener('input', update); });
         update();
       }
 
