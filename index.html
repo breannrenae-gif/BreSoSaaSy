@@ -511,6 +511,20 @@
   .calc-cta{width:100%;justify-content:center;margin-top:18px;}
   .calc.hero-calc .calc-result .recover{margin-bottom:0;}
   .calc.hero-calc .calc-math{font-size:.72rem;color:var(--ink-mute);margin-top:14px;line-height:1.45;}
+  .tier .price{font-family:'Space Grotesk';font-weight:700;font-size:2.5rem;color:#fff;line-height:1;margin:10px 0 2px;}
+  .tier .price span{font-size:1rem;color:var(--ink-mute);font-weight:500;}
+  .tier .setup{font-size:.8rem;color:var(--ink-mute);margin-bottom:16px;}
+  .tier-cta{width:100%;justify-content:center;margin-top:20px;}
+  .pricing-bonus{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 30px;max-width:920px;margin:0 auto 36px;padding:18px 24px;border-radius:16px;background:var(--grad-soft);border:1px solid var(--panel-border);}
+  .pricing-bonus .pb-item{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--ink-soft);}
+  .pricing-bonus .pb-item svg{width:18px;height:18px;color:#5ef0c0;flex:none;}
+  .pricing-bonus .pb-item b{color:var(--ink);}
+  .done-for-you{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;max-width:960px;margin:38px auto 0;padding:30px 34px;border-radius:var(--radius-lg);background:linear-gradient(160deg,rgba(124,58,237,0.14),rgba(59,130,246,0.08));border:1px solid var(--panel-border);}
+  .done-for-you .dfy-text{max-width:540px;}
+  .done-for-you h3{font-size:1.4rem;margin-bottom:6px;}
+  .done-for-you p{color:var(--ink-soft);font-size:.98rem;}
+  .done-for-you .dfy-cta{display:flex;gap:12px;flex-wrap:wrap;}
+  @media(max-width:640px){.done-for-you{flex-direction:column;align-items:flex-start;}.done-for-you .dfy-cta{width:100%;}.done-for-you .dfy-cta .btn{flex:1;justify-content:center;}}
 </style>
 <!-- Meta Pixel (paste your numeric Pixel ID into META_PIXEL_ID to activate) -->
 <script>
@@ -543,6 +557,7 @@
         <a href="#help">What I help with</a>
         <a href="#industries">Who it's for</a>
         <a href="#platform">The platform</a>
+        <a href="#pricing">Pricing</a>
         <a href="#about">About</a>
         <a href="/blog/">Blog</a>
       </nav>
@@ -555,6 +570,7 @@
       <a href="#help">What I help with</a>
       <a href="#industries">Who it's for</a>
       <a href="#platform">The platform</a>
+      <a href="#pricing">Pricing</a>
       <a href="#about">About</a>
       <a href="/blog/">Blog</a>
       <a class="btn btn-primary" href="#audit">Get a free audit</a>
@@ -848,16 +864,25 @@
       </div>
     </section>
 
-    <!-- tiers -->
-    <section style="padding-top:0;">
+        <!-- pricing -->
+    <section id="pricing" style="padding-top:0;">
       <div class="section-head">
-        <span class="eyebrow">Subscription tiers</span>
-        <h2>Start where you are. Grow when you're ready.</h2>
-        <p>Three levels, one platform. We'll figure out the right fit together on your free audit. No overbuying, no pressure.</p>
+        <span class="eyebrow">Transparent pricing</span>
+        <h2>Simple pricing. No surprises.</h2>
+        <p>Most service businesses quietly lose thousands a month to slow follow-up. Plans start at $297 a month, often less than a single missed job. Start it yourself, or have me set the whole thing up for you.</p>
+      </div>
+      <div class="wrap">
+        <div class="pricing-bonus">
+          <div class="pb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Free bonuses</b> with every plan: my Swipe File + Template Vault</span></div>
+          <div class="pb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>14-day money-back guarantee.</b> Cancel anytime.</span></div>
+          <div class="pb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Replaces 10+ tools</b> you may already pay for</span></div>
+        </div>
       </div>
       <div class="wrap tiers">
         <div class="tier">
           <h3>Standard</h3>
+          <div class="price">$297<span>/mo</span></div>
+          <div class="setup">+ one-time $500 setup</div>
           <div class="blurb">Essential tools to manage and grow.</div>
           <ul>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Sales pipeline &amp; opportunity management</li>
@@ -867,10 +892,13 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Team &amp; user management</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Payment processing</li>
           </ul>
+          <a class="btn btn-ghost tier-cta" href="https://ushda.ai/?am_id=breann2834" target="_blank" rel="noopener">Start now &rarr;</a>
         </div>
         <div class="tier feature">
           <div class="badge">Most popular</div>
           <h3>Premiere</h3>
+          <div class="price">$497<span>/mo</span></div>
+          <div class="setup">+ one-time $500 setup</div>
           <div class="blurb">Where automation starts doing the work.</div>
           <div class="plus">Everything in Standard, plus</div>
           <ul>
@@ -880,9 +908,12 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Invoicing</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Memberships</li>
           </ul>
+          <a class="btn btn-primary tier-cta" href="https://ushda.ai/?am_id=breann2834" target="_blank" rel="noopener">Start now &rarr;</a>
         </div>
         <div class="tier">
           <h3>Elite</h3>
+          <div class="price">$997<span>/mo</span></div>
+          <div class="setup">+ one-time $500 setup</div>
           <div class="blurb">The full growth engine.</div>
           <div class="plus">Everything in Premiere, plus</div>
           <ul>
@@ -892,10 +923,20 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Integrations &amp; customizations</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Priority support</li>
           </ul>
+          <a class="btn btn-ghost tier-cta" href="https://ushda.ai/?am_id=breann2834" target="_blank" rel="noopener">Start now &rarr;</a>
         </div>
       </div>
-      <div style="text-align:center;margin-top:34px;">
-        <a class="btn btn-ghost btn-lg" href="https://ushda.ai/?am_id=breann2834" target="_blank" rel="noopener">Explore the full platform &rarr;</a>
+      <div class="wrap">
+        <div class="done-for-you">
+          <div class="dfy-text">
+            <h3>Prefer it done for you?</h3>
+            <p>Not sure which plan fits, or want it built without lifting a finger? Get a free, no-pressure lead-flow audit and I'll set up the whole system around your business.</p>
+          </div>
+          <div class="dfy-cta">
+            <a class="btn btn-primary btn-lg" href="#audit">Get my free audit</a>
+            <a class="btn btn-ghost btn-lg" href="https://ushda.ai/?am_id=breann2834" target="_blank" rel="noopener">Explore the platform &rarr;</a>
+          </div>
+        </div>
       </div>
     </section>
 
